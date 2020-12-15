@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div id="app">
+    <p>哈哈</p>
+    <p>msg的内容为：{{msg}}</p>
+    <p v-text="msg" title="哈哈"></p>
+    <p v-text="car.color" title="哈哈"></p>
+    <p v-html="msg2" title="哈哈"></p>
+    <input type="text" v-model="msg">
+    <button v-on:click="onClick">按钮</button>
+    <ui>
+      <li>{{car.brand}}</li>
+      <li>{{car.color}}</li>
+    </ui>
+  </div>
+  <script src="./src/compile.js"></script>
+  <script src="./src/vue.js"></script>
+  <script>
+    const vm=new Vue({
+      el:'#app',
+      data:{
+        msg:'hello vue',
+        msg2:'<h1>哈哈哈</h1>',
+        car:{
+          brand:'一次大众',
+          color:'pink'
+        }
+      },
+      methods:{
+        onClick(){
+          console.log(this.$data.msg)
+        }
+      }
+    })
+    // console.log(vm)
+  </script>
+</body>
+</html>
